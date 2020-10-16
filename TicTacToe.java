@@ -16,7 +16,7 @@ public class TicTacToe {
         char winner = ' ';
 
         while (winner == ' ') {
-            System.out.println("Select two numbers 1 to 3: ");
+            System.out.println("Select two numbers from 1 to 3 (first for the row and the second for the column): ");
             x = input.nextInt() - 1;
             y = input.nextInt() - 1;
 
@@ -39,6 +39,11 @@ public class TicTacToe {
             }
 
             printBoard();
+
+            if (isBoardFull()) {
+                System.out.println("No more moves. Nobody wins.");
+                return;
+            }
         }
 
         System.out.print("The winner is: ");
@@ -87,5 +92,16 @@ public class TicTacToe {
         return false;
     }
 
+    public static boolean isBoardFull() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (board[i][j] == '-') {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
     
 }
