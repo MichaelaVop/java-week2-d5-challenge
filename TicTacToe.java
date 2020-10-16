@@ -1,3 +1,5 @@
+// Group of Michaela, Miyu S., Yuri, Marina B.
+
 import java.util.Scanner;
 
 public class TicTacToe {
